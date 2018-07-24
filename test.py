@@ -3,12 +3,12 @@ import tensorflow as tf
 import numpy as np
 
 #create data
-x_data=np.random(100).astype(np.float32)
+x_data=np.random.rand(100).astype(np.float32)
 y_data=x_data*0.1 + 0.3
 
 ## structure start ##
 Weight=tf.Variable(tf.random_uniform([1], -1.0, 1.0))
-biases=tf.Variable(tf.zeros[1]))
+biases=tf.Variable(tf.zeros(1))
 
 y=Weight*x_data + biases
 
@@ -30,4 +30,4 @@ sess.run(init)
 for step in range(201):
     sess.run(train)
     if step % 20 == 0:
-        print(step, sess.run(Weights), sess.run(biases))
+        print(step, sess.run(Weight), sess.run(biases))
